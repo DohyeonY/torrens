@@ -20,7 +20,7 @@ function Section({ children }) {
     console.log('Runpage변경')
     setTimeout(() => {
       navigate("/run")
-    }, 2000)
+    }, 1500)
   })
   return (
     <section ref={ref}>
