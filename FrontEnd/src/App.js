@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Next from './component/Next'
 import Main from './component/Main'
 import Run from './component/Run'
+import Hello from './component/Hello'
+import HelloGif from './component/HelloGif'
 
 
 function App() {
@@ -14,6 +16,8 @@ function App() {
           <Route path="/" element={<Main/>}/>
           <Route path="/next" element={<Next/>}/>
           <Route path="/run" element={<Run/>}/>
+          <Route path="/hello" element={<Hello/>}/>
+          <Route path="/hellogif" element={<HelloGif/>}/>
         </Routes>
       </BrowserRouter>
     </div>
