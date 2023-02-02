@@ -1,44 +1,42 @@
 #include <SoftwareSerial.h>
 
-int RX = 3;
-int TX = 4;
-int btn = 7;
-int ledState = LOW;
-int R_LED = 10;
-SoftwareSerial bluetooth(RX, TX);
-
-int last_btn_state;
-int current_btn_state;
+SoftwareSerial hc06(3, 4); // Tx, Rx;
+int btn = 7;               // 버튼
+int last_btn_state;        // 마지막 버튼 상태 
+int current_btn_state;     // 현재 버튼 상태 
+int state = 0;             // 전송될 상태
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  bluetooth.begin(9600);
-  pinMode(btn, INPUT_PULLUP);
-  pinMode(LED_BUILTIN, OUTPUT);
-  pinMode(R_LED, OUTPUT);
+  hc06.begin(9600);
+  pinMode(btn, INPUT_PULLUP); // 버튼 OutPut 사용
 
-  current_btn_state = digitalRead(btn);
+  current_btn_state = digitalRead(btn); // 처음 버튼 값 >> 최근 버튼 상태 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  last_btn_state = current_btn_state;
-    current_btn_state = digitalRead(btn);
+  last_btn_state = current_btn_state;   // 마지막 버튼 상태 갱신
+  current_btn_state = digitalRead(btn); // 버튼 값 읽어서 최근 버튼 상태에 삽입
 
-  if(last_btn_state == HIGH && current_btn_state == LOW){
+  // char* result = (char*)state;
+
+  if(last_btn_state == HIGH && current_btn_state == LOW){   // 토글 조건
     Serial.println("The button is pressed");
-
-    ledState = !ledState;
-
-    // digitalWrite(LED_BUILTIN, ledState);
-    digitalWrite(R_LED, ledState);
+    state = !state;   // 토글
+    // Serial.println(state);    // temp
+    hc06.write(state);          // 버튼 상태 출력 (Jetson nano)
+    Serial.println(state);      // 버튼 상태 출력 (시리얼 모니터)
   }
 
-  if(bluetooth.available()){
-    Serial.write(bluetooth.read());
+
+  if(hc06.available()){
+    Serial.write(hc06.read());
   }
+ 
   if(Serial.available()){
-    bluetooth.write(Serial.read());
+    hc06.write(Serial.read());  // 시리얼 모니터에 출력
+    // hc06.write(result);          // 버튼 상태 출력 (Jetson nano)
   }
 }
