@@ -13,6 +13,7 @@ const app = express()
 app.use(express.static("public"))
 app.use(express.static("images"))
 brushRouter.use(express.static("public"))
+indexRouter.use(express.static("public"))
 
 // port
 app.listen(8000, () => {
