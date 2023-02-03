@@ -1,42 +1,31 @@
-#include <SoftwareSerial.h>
+from bluetooth import *
+import webbrowser
+import pyautogui
+import time
 
-SoftwareSerial hc06(3, 4); // Tx, Rx;
-int btn = 7;               // 버튼
-int last_btn_state;        // 마지막 버튼 상태 
-int current_btn_state;     // 현재 버튼 상태 
-int state = 0;             // 전송될 상태
+url = 'https://www.naver.com'
+chrome_path = '/usr/lib/chromium-browser/chromium-browser'
 
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  hc06.begin(9600);
-  pinMode(btn, INPUT_PULLUP); // 버튼 OutPut 사용
+addr = "98:D3:51:F9:58:EF"
+socket = BluetoothSocket(RFCOMM)
+// socket.connect(("Arduino", 1))
+socket.connect((addr, 1))
+print("bluetooth connected!")
 
-  current_btn_state = digitalRead(btn); // 처음 버튼 값 >> 최근 버튼 상태 
-}
+while True:
+    data = socket.recv(1024)  // type == byte
 
-void loop() {
-  // put your main code here, to run repeatedly:
-  last_btn_state = current_btn_state;   // 마지막 버튼 상태 갱신
-  current_btn_state = digitalRead(btn); // 버튼 값 읽어서 최근 버튼 상태에 삽입
+    // ret = str(data)
+    ret2 = bytes(1)
 
-  // char* result = (char*)state;
+    print("Received : %s" %data)
+    // print("data type : %s" %type(data))
+    // print(ret)
 
-  if(last_btn_state == HIGH && current_btn_state == LOW){   // 토글 조건
-    Serial.println("The button is pressed");
-    state = !state;   // 토글
-    // Serial.println(state);    // temp
-    hc06.write(state);          // 버튼 상태 출력 (Jetson nano)
-    Serial.println(state);      // 버튼 상태 출력 (시리얼 모니터)
-  }
+    if (data != ret2):
+        webbrowser.get(chrome_path).open(url)
 
-
-  if(hc06.available()){
-    Serial.write(hc06.read());
-  }
- 
-  if(Serial.available()){
-    hc06.write(Serial.read());  // 시리얼 모니터에 출력
-    // hc06.write(result);          // 버튼 상태 출력 (Jetson nano)
-  }
-}
+    if (data == "q"):
+        print("Quit")
+        break
+socket.close()
