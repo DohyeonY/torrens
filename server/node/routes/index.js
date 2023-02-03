@@ -8,21 +8,6 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/wait', function (req, res, next) {
-    // let today = new Date();
-    // let hour = today.getHours();
-    // let timetable = []
-    // let img = document.querySelector('img')
-
-    // fs.readFile('../timetable.txt', (err, data) => {
-    //     if (err) throw err;
-    //     timetable = data.toString().split(',')
-    //     timetable.forEach(v => {
-    //         let tmp = v.split('/')
-    //         if (parseInt(tmp[0]) === hour) {
-    //             img.src = './images/' + tmp[1] + '.png'
-    //         }
-    //     })
-    // })
     res.sendFile(__dirname + '/index/wait.html');
 });
 

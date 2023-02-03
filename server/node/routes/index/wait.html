@@ -12,7 +12,14 @@
 <a href="http://localhost:8000/main/">main</a>
 
 <script>
-
+    
+    async function a () {
+        const ws = new WebSocket("ws://i8c203.p.ssafy.io:8002").send('time request')    
+        
+        await ws.send('time request')
+    }
+    a();
+    
 
 </script>
 </body>
