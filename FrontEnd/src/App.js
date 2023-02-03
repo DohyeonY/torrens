@@ -6,6 +6,7 @@ import Main from './component/Main'
 import Run from './component/Run'
 import Hello from './component/Hello'
 import HelloGif from './component/HelloGif'
+import WebSoket from './component/WebSoket'
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/run" element={<Run/>}/>
           <Route path="/hello" element={<Hello/>}/>
           <Route path="/hellogif" element={<HelloGif/>}/>
+          <Route path="/websoket" element={<WebSoket/>}/>
         </Routes>
       </BrowserRouter>
     </div>

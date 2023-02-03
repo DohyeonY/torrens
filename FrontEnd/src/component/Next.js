@@ -22,6 +22,7 @@ function Section({ children }) {
       navigate("/run")
     }, 1500)
   })
+  
   return (
     <section ref={ref}>
       
