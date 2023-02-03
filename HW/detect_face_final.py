@@ -17,8 +17,8 @@ def transport_with_backend():
 
     cap = cv2.VideoCapture(camera_id, cv2.CAP_V4L2)
     cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'YUYV'))
-    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
-    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 120)
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 160)
     with mp_face_mesh.FaceMesh(
         min_detection_confidence=0.5,
         min_tracking_confidence=0.5) as face_mesh:
@@ -47,16 +47,16 @@ def transport_with_backend():
                     ih, iw, ic = image.shape
                     landmarks = list(face_landmark.landmark)
                     landmarks_tong = {
-                        "nose": str(int(landmarks[1].x * iw)) + ',' + str(int(landmarks[1].y * ih)),
-                        "Top": str(int(landmarks[10].x * iw)) + ',' + str(int(landmarks[10].y * ih)),
-                        "upperLib": str(int(landmarks[11].x * iw)) + ',' + str(int(landmarks[11].y * ih)),
-                        "lowerLib": str(int(landmarks[17].x * iw)) + ',' + str(int(landmarks[17].y * ih)),
-                        "leftEye": str(int(landmarks[27].x * iw)) + ',' + str(int(landmarks[27].y * ih)),
-                        "Chin": str(int(landmarks[152].x * iw)) + ',' + str(int(landmarks[152].y * ih)),
-                        "Cheek2": str(int(landmarks[204].x * iw)) + ',' + str(int(landmarks[204].y * ih)),
-                        "Cheek1": str(int(landmarks[207].x * iw)) + ',' + str(int(landmarks[207].y * ih)),
-                        "rightEye": str(int(landmarks[257].x * iw)) + ',' + str(int(landmarks[257].y * ih)),
-                        "Cheek3": str(int(landmarks[434].x * iw)) + ',' + str(int(landmarks[434].y * ih))
+                        "nose": str(int(landmarks[1].x * 1920)) + ',' + str(int(landmarks[1].y * 700)),
+                        "Top": str(int(landmarks[10].x * 1920)) + ',' + str(int(landmarks[10].y * 700)),
+                        "upperLib": str(int(landmarks[11].x * 1920)) + ',' + str(int(landmarks[11].y * 700)),
+                        "lowerLib": str(int(landmarks[17].x * 1920)) + ',' + str(int(landmarks[17].y * 700)),
+                        "leftEye": str(int(landmarks[27].x * 1920)) + ',' + str(int(landmarks[27].y * 700)),
+                        "Chin": str(int(landmarks[152].x * 1920)) + ',' + str(int(landmarks[152].y * 700)),
+                        "Cheek2": str(int(landmarks[204].x * 1920)) + ',' + str(int(landmarks[204].y * 700)),
+                        "Cheek1": str(int(landmarks[207].x * 1920)) + ',' + str(int(landmarks[207].y * 700)),
+                        "rightEye": str(int(landmarks[257].x * 1920)) + ',' + str(int(landmarks[257].y * 700)),
+                        "Cheek3": str(int(landmarks[434].x * 1920)) + ',' + str(int(landmarks[434].y * 700))
                     }
                     Tong = json.dumps(landmarks_tong)
                     yield from websocket.send(Tong)
