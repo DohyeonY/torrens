@@ -24,7 +24,7 @@ export default function CatchBF() {
         // console.log(hour)
         if ( hour === "12" ) {
             navigate("/eatlunch")
-        } else if ( hour !== "12") {
+        } else if ( hour !== "14") {
             navigate("/")
         }
     }
@@ -32,8 +32,8 @@ export default function CatchBF() {
     return (
         <div>
             <div style={{ 
-                width: "1536px",
-                height: "864px",
+                width: "1920px",
+                height: "1080px",
                 }}>
                 <h1 style={{
                     textAlign: "left",

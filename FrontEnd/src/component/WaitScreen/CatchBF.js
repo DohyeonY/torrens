@@ -42,8 +42,8 @@ export default function CatchBF() {
     return (
         <div>
             <div style={{ 
-                width: "1536px",
-                height: "864px",
+                width: "1920px",
+                height: "1080px",
                 backgroundImage: "url(img/wait/CatchBF.gif)" 
                 }}>
                 <h1 style={{

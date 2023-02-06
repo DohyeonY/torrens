@@ -43,8 +43,8 @@ export default function CatchBF() {
     return (
         <div>
             <div style={{
-                width: "1536px",
-                height: "864px",
+                width: "1920px",
+                height: "1080px",
                 // backgroundImage: "url(img/wait/EatLunch.gif)" 
             }}>
                 <h1 style={{
@@ -55,6 +55,7 @@ export default function CatchBF() {
                 }}>{timer}</h1>
                 <img style={{
                     paddingRight: "800px",
+                    marginTop: "100px",
                 }}
                     src="img/wait/EatLunch.gif" alt="123" />
             </div>
