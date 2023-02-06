@@ -10,7 +10,9 @@ import "./Hello.css";
 // const idleTimeout = 1000
 function Section({ children }) {
     const [checkTimer, setcheckTimer] = useState(0)
+    const [pressButton, setpressButton] = useState("")
     const navigate = useNavigate()
+    
   useEffect(() => {
     const goHomeTimer = setInterval(() => {
       if ( checkTimer === 3 ) {
@@ -22,8 +24,18 @@ function Section({ children }) {
     }, 30000)
   })
       // console.log(hour)
-    
-    
+    const readyChange = () => {
+      let ws = new WebSocket("ws://i8c203.p.ssafy.io:8003/command")
+      ws.onmessage = (event) => {
+        // setpressButton(event.data)
+        if ( event.data === "PressButton" ) {
+          navigate("/notice")
+        }
+        console.log(pressButton)
+        console.log(event.data)
+      }
+  }
+    readyChange()
     // goHomeTimer()
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true,     margin: "0px 100px -50px 0px" });

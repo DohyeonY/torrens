@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import "./CatchBF.css"
+// import UseInterval from "../UseInterval"
 
 export default function CatchBF() {
     const navigate = useNavigate()
@@ -27,10 +28,12 @@ export default function CatchBF() {
 
     const startTimer = () => {
         setInterval(currentTimer, 1000)
-        // console.log(hour)
+        console.log(hour)
         if (hour === "14") {
             navigate("/sleep")
-        } else if (hour !== "12") {
+        } else if (hour === "12") {
+
+        } else {
             navigate("/")
         }
         if (exist !== "") {

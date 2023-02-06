@@ -10,6 +10,7 @@ import WebSoket from './component/WebSoket'
 import CatchBf from './component/WaitScreen/CatchBF'
 import Sleep from './component/WaitScreen/Sleep'
 import EatLunch from './component/WaitScreen/EatLunch'
+import Notice from './component/EduScreen/Notice'
 
 
 function App() {
@@ -18,15 +19,16 @@ function App() {
     >
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<CatchBf/>}/>
+          <Route path="/sleep" element={<Sleep/>}/>
+          <Route path="/eatlunch" element={<EatLunch/>}/>
           <Route path="/main" element={<Main/>}/>
           <Route path="/next" element={<Next/>}/>
           <Route path="/run" element={<Run/>}/>
           <Route path="/hello" element={<Hello/>}/>
           <Route path="/hellogif" element={<HelloGif/>}/>
+          <Route path="/notice" element={<Notice/>}/>
           <Route path="/websoket" element={<WebSoket/>}/>
-          <Route path="/" element={<CatchBf/>}/>
-          <Route path="/sleep" element={<Sleep/>}/>
-          <Route path="/eatlunch" element={<EatLunch/>}/>
         </Routes>
       </BrowserRouter>
     </div>
