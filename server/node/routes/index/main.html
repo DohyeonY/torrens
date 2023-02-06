@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body bgcolor="black">
+
+<a href="https://i8c203.p.ssafy.io:8000/brush/">brush</a>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  const ws = new WebSocket("ws://i8c203.p.ssafy.io:8002")
+  ws.onmessage = function(event) {
+    console.log(event.data)
+    if (event.data === "time request") {
+      axios.get('/main/send')
+        .then(function (response) {
+          ws.send(JSON.stringify(response.data)) 
+        })
+        .catch(function (error) {})
+    }
+  }
+
+</script>
+</body>
+</html>

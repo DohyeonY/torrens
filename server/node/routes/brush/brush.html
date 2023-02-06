@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Websocket Chatting</title>
+
+  <script>
+    const ws = new WebSocket("ws://i8c203.p.ssafy.io:8002")
+
+    // 메세지 수신
+    function receiveMessage(event) {
+      let data = JSON.parse(event.data)
+      let Top = data['Top'].split(',')
+      let Chin = data['Chin'].split(',')
+      let leftEye = data['leftEye'].split(',')
+      let rightEye = data['rightEye'].split(',')
+      let nose = data['nose'].split(',')
+      let upperLib = data['upperLib'].split(',')
+      let lowerLib = data['lowerLib'].split(',')
+      let Cheek1 = data['Cheek1'].split(',')
+      let Cheek2 = data['Cheek2'].split(',')
+      let Cheek3 = data['Cheek3'].split(',')
+
+      let Top_img = document.querySelector('.Top')
+      Top_img.style.top = (parseInt(Cheek1[1])) + 'px'
+      Top_img.style.left = (parseInt(Cheek1[0])) + 'px'
+
+      let Cheek1_img = document.querySelector('.Cheek1')
+      Cheek1_img.style.top = (parseInt(Cheek1[1]) + 100) + 'px'
+      Cheek1_img.style.left = (parseInt(Cheek1[0]) - 200) + 'px'
+
+      let Cheek2_img = document.querySelector('.Cheek2')
+      Cheek2_img.style.top = (parseInt(Cheek2[1]) - 100) + 'px'
+      Cheek2_img.style.left = (parseInt(Cheek2[0]) - 200) + 'px'
+
+      let Cheek3_img = document.querySelector('.Cheek3')
+      Cheek3_img.style.top = (parseInt(Cheek3[1]) + 0) + 'px'
+      Cheek3_img.style.left = (parseInt(Cheek3[0]) + 200) + 'px'
+    }
+
+    ws.onmessage = receiveMessage
+
+  </script>
+
+  <style>
+    .img {
+      position: absolute;
+      left: -1000px;
+      top: -1000px;
+    }
+  </style>
+</head>
+
+<body bgcolor="black">
+  <div>
+    <img src="./images/hat1.png" alt="img..." class="img Top">
+    <img src="./images/virus1.png" alt="img..." class="img Cheek1">
+    <img src="./images/virus2.png" alt="img..." class="img Cheek2">
+    <img src="./images/virus3.png" alt="img..." class="img Cheek3">
+  </div>
+
+  <div id="chat-log"></div>
+</body>
+
+</html>
