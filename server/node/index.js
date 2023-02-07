@@ -26,6 +26,25 @@ app.use('/brush', brushRouter);
 
 
 // websocket
+
+const wss2 = new WebSocketServer({ port: 8003, path: '/command' })
+wss2.on("connection", (ws, request) => {
+  
+  ws.on("close", () => {
+  });
+
+  ws.on("message", data => {
+    wss2.clients.forEach(client => {
+      
+      client.send("OK");
+      client.send(data.toString());
+    })
+  })
+
+})
+
+
+
 const wss = new WebSocketServer({ port: 8002 })
 wss.on("connection", (ws, request) => {
   ws.on("close", () => {
@@ -40,5 +59,7 @@ wss.on("connection", (ws, request) => {
     })
   })
 })
+
+
 
 module.exports = app;

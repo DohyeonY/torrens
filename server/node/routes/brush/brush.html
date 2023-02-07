@@ -11,6 +11,7 @@
 
     // 메세지 수신
     function receiveMessage(event) {
+      console.log(event.data)
       let data = JSON.parse(event.data)
       let Top = data['Top'].split(',')
       let Chin = data['Chin'].split(',')
