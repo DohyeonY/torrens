@@ -7,7 +7,9 @@ import React from 'react';
 // import { useNavigate } from "react-router-dom";
 import "./WebSoket.css";
 // import '~video-react/dist/video-react.css';
-import { Player } from 'video-react';
+// import { Player } from 'video-react';
+import Video from "./VideoComponent"
+
 
 
 
@@ -29,18 +31,24 @@ function WebSoket() {
         Top_img.style.left = (parseInt(TopNum[0])) / 2 + 'px'
         console.log(TopNum[0])
         console.log(TopNum[1])
-
     }
     return (
       <div className="App">
-        <Player>
-            <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" />
-        </Player>
-        {/* <div id="video">
-            <video ref={videoRef} controls="controls">
-                <source src={video} type="video/avi"/>
-            </video></div> */}
-        <div id="websoket"><img id="Top" src="img/세균.jpg" alt="img/123.png"/></div>
+        <div 
+          style={{
+            marginLeft: "-95px",
+            marginTop: "540px",
+            float: "left",
+          }}>
+            <Video/>
+        </div>
+        <div
+          style={{
+            float: "rignt",
+          }}
+        >
+          <img style={{marginTop: "350px", marginLeft: "150px"}} id="Top" src="img/세균.jpg" alt="img/123.png"/>
+        </div>
       </div>
     );
 

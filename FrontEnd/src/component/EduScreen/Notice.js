@@ -17,7 +17,7 @@ function Notice () {
     UseInterval(() => {
         console.log("123")
         if ( checkTimer === 3) {
-            navigate("/eatlunch")
+            // navigate("/eatlunch")
         } else if ( checkTimer < 4 ) {
             setcheckTimer(checkTimer +1)
         }
@@ -27,7 +27,7 @@ function Notice () {
       let ws = new WebSocket("ws://i8c203.p.ssafy.io:8003/command")
       ws.onmessage = (event) => {
         setpressButton(event.data)
-        if ( event.data === "PressButton" ) {
+        if ( event.data === "Btn-pressed" ) {
           navigate("/websocket")
         }
         console.log(pressButton)
