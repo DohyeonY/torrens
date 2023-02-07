@@ -1,65 +1,50 @@
 const express = require("express")
 const { WebSocketServer } = require("ws")
 
+
 // routes
-const indexRouter = require('./routes/index');
-const brushRouter = require('./routes/brush');
+const mainRouter = require('./routes/main');
 
 
 // server
-const app = express()
+const app = express();
 
-// static dir
-app.use(express.static("public"))
-app.use(express.static("images"))
-brushRouter.use(express.static("public"))
-indexRouter.use(express.static("public"))
 
 // port
-app.listen(8000, () => {
-  console.log(`Example app listening on port 8000`)
+const port = '8000';
+app.listen(port, () => {
+  console.log(`Example app listening on port ${ port }`)
 })
 
 // routes
-app.use('/', indexRouter);
-app.use('/brush', brushRouter);
+app.use('/main', mainRouter);
 
 
 // websocket
+const camWWS = new WebSocketServer({ port: 8002 });
+camWWS.on("connection", (ws, request) => {
+  ws.on("close", () => {
+  });
+  
+  ws.on("message", data => {
+    camWWS.clients.forEach(client => {
+      client.send(data.toString())
+    })
+  });
+});
 
-const wss2 = new WebSocketServer({ port: 8003, path: '/command' })
-wss2.on("connection", (ws, request) => {
+const commandWWS = new WebSocketServer({ port: 8003, path: '/command' })
+commandWWS.on("connection", (ws, request) => {
   
   ws.on("close", () => {
   });
 
   ws.on("message", data => {
-    wss2.clients.forEach(client => {
-      
-      client.send("OK");
-      client.send(data.toString());
-    })
-  })
-
-})
-
-
-
-const wss = new WebSocketServer({ port: 8002 })
-wss.on("connection", (ws, request) => {
-  ws.on("close", () => {
-    wss.clients.forEach((client) => {
-    });
-  });
-  wss.clients.forEach(client => {
-  })
-  ws.on("message", data => {
-    wss.clients.forEach(client => {
+    commandWWS.clients.forEach(client => {
       client.send(data.toString())
+      client.send("OK")
     })
-  })
-})
-
-
+  });
+});
 
 module.exports = app;
