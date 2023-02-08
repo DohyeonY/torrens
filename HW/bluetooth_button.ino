@@ -1,7 +1,7 @@
 #include <SoftwareSerial.h>
 
 SoftwareSerial hc06(3, 4); // Tx, Rx;
-int btn = 7;               // Button pin
+int btn = 8;               // Button pin
 int last_btn_state;        // 마지막 버튼 상태 
 int current_btn_state;     // 현재 버튼 상태 
 // int state = 0;             // 전송될 상태
@@ -25,15 +25,15 @@ void loop() {
   // char* result = (char*)state;
 
   if(last_btn_state == HIGH && current_btn_state == LOW){   // 토글 조건
-    Serial.println("The button is pressed");  // Serial 모니터에 출력
+    // Serial.println("The button is pressed");  // Serial 모니터에 출력
     // digitalWrite(led, HIGH);  // LED 점등
     // state = !state;   // 토글
     // Serial.println(state);    // temp
-    hc06.write(1);          // 버튼 상태 출력 (Jetson nano)
+    // hc06.write(1);          // 버튼 상태 출력 (Jetson nano)
     Serial.println(1);      // 버튼 상태 출력 (시리얼 모니터)
+    delay(1000); // delay  
   } 
 
-//  delay(100); // delay  
 //  digitalWrite(led, LOW);  // LED 소등
 
   if(hc06.available()){
