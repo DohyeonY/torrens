@@ -7,28 +7,27 @@ import { useEffect } from "react";
 import { useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./Hello.css";
+import useInterval from './UseInterval';
 // const idleTimeout = 1000
 function Section({ children }) {
     const [checkTimer, setcheckTimer] = useState(0)
     const [pressButton, setpressButton] = useState("")
     const navigate = useNavigate()
     
-  useEffect(() => {
-    const goHomeTimer = setInterval(() => {
-      if ( checkTimer === 3 ) {
-        navigate("/")
-      } else if ( checkTimer < 4 ) {
-        setcheckTimer(checkTimer + 1)
-      }
-      console.log(checkTimer)
-    }, 30000)
-  })
-      // console.log(hour)
+    useInterval(() => {
+        if ( checkTimer === 3 ) {
+          navigate("/")
+        } else if ( checkTimer < 4 ) {
+          setcheckTimer(checkTimer + 1)
+        }
+        console.log(checkTimer)
+      }, 30000)
+        // console.log(hour)
     const readyChange = () => {
       let ws = new WebSocket("ws://i8c203.p.ssafy.io:8003/command")
       ws.onmessage = (event) => {
         // setpressButton(event.data)
-        if ( event.data === "Btn-pressed" ) {
+        if ( event.data === "OK" ) {
           navigate("/notice")
         }
         console.log(pressButton)

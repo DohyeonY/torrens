@@ -1,22 +1,64 @@
 // import ReactPlayer from 'react-player/lazy';
-import ReactPlayer from 'react-player/youtube';
-// import React, {useEffect, useState} from "react";
+import ReactPlayer from 'react-player';
+
+import React, {useState, useEffect} from "react";
 // import VideoPlayer from "react-video-js-player"
 import YouTube from "react-youtube"
+import UseInterval from "../UseInterval"
 
 const VideoComponent = () => {
-
+    const [mute, setMute] = useState(true)
+    const [play, setPlay] = useState(false)
+    const [volume, setVolume] = useState(0)
     // setVideo()
+
+    // UseInterval(() => {
+    //     console.log(`실행전${mute}`)
+    //     setVolume(1)
+    //     setMute(false)
+    //     console.log(`실행후${mute}`)
+    // }, 500)
+    
+
     return (
         <>
-            <ReactPlayer 
-                url={['https://youtu.be/BZmdxw3owWw','https://youtu.be/8sM0L5zFQ-Q' ]}
-                width='1000px'         // 플레이어 크기 (가로)
-                height='600px'        // 플레이어 크기 (세로)
-                playing={true}        // 자동 재생 on
-                muted={true}
-                controls={false}       // 플레이어 컨트롤 노출 여부
-                />
+        {/* <YouTube
+            //videoId : https://www.youtube.com/watch?v={videoId} 유튜브 링크의 끝부분에 있는 고유한 아이디
+            videoId={"BZmdxw3owWw"}
+            //opts(옵션들): 플레이어의 크기나 다양한 플레이어 매개 변수를 사용할 수 있음.
+            //밑에서 더 설명하겠습니다.
+            opts={{
+                width: "560",
+                height: "315",
+                playerVars: {
+                autoplay: 1, //자동재생 O
+                mute: 1,
+                rel: 0, //관련 동영상 표시하지 않음 (근데 별로 쓸모 없는듯..)
+                modestbranding: 1, // 컨트롤 바에 youtube 로고를 표시하지 않음
+                },
+            }}
+            //이벤트 리스너 
+            onEnd={(e)=>{e.target.stopVideo(0);}}      
+            /> */}
+            <div 
+            style={{
+                marginLeft: "-5px",
+                marginTop: "520px",
+                float: "left",
+                height: "1080px",
+                width: "50%",
+            }}>
+                <ReactPlayer
+                    // url='/videos/1.mp4'
+                    url= {["https://youtu.be/BZmdxw3owWw", "https://youtu.be/8sM0L5zFQ-Q"]}
+                    width='900px'         // 플레이어 크기 (가로)
+                    height='600px'        // 플레이어 크기 (세로)
+                    muted={false}
+                    controls={true}       // 플레이어 컨트롤 노출 여부
+                    // onReady={() => {playing()}}
+                    onError={(error) => {console.log(error);}}
+                    />
+            </div>
         </>
     )
 }

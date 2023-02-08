@@ -24,17 +24,17 @@ function Notice () {
     }, 30000)
 
     const readyChange = () => {
-      let ws = new WebSocket("ws://i8c203.p.ssafy.io:8003/command")
-      ws.onmessage = (event) => {
-        setpressButton(event.data)
-        if ( event.data === "Btn-pressed" ) {
-          navigate("/websocket")
+        let ws = new WebSocket("ws://i8c203.p.ssafy.io:8003/command")
+        ws.onmessage = (event) => {
+          // setpressButton(event.data)
+          if ( event.data === "OK" ) {
+            navigate("/websoket")
+          }
+          console.log(pressButton)
+          console.log(event.data)
         }
-        console.log(pressButton)
-        console.log(event.data)
-      }
-  }
-    readyChange()
+    }
+      readyChange()
  return (
         <>
             <img style={{
