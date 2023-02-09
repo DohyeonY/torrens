@@ -28,7 +28,7 @@ function Notice () {
         ws.onmessage = (event) => {
           // setpressButton(event.data)
           if ( event.data === "OK" ) {
-            navigate("/websoket")
+            navigate("/eduscreen")
           }
           console.log(pressButton)
           console.log(event.data)

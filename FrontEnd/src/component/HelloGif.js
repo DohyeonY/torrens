@@ -23,6 +23,7 @@ function Section({ children }) {
         console.log(checkTimer)
       }, 30000)
         // console.log(hour)
+
     const readyChange = () => {
       let ws = new WebSocket("ws://i8c203.p.ssafy.io:8003/command")
       ws.onmessage = (event) => {
@@ -39,18 +40,6 @@ function Section({ children }) {
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true,     margin: "0px 100px -50px 0px" });
     
-  
-    // const changePage = setTimeout(() => {
-      //   navigate("/next")
-      // }, 5000)
-      //   useEffect(() => {
-        //     console.log('changepage페이지 변경')
-        //     setTimeout(() => {
-          //       navigate("/next")
-          //     }, 5000)
-          //   })
-          
-          // goHomeTimer()
           return (
             <section ref={ref}>
       

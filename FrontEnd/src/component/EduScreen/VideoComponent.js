@@ -42,8 +42,8 @@ const VideoComponent = () => {
             /> */}
             <div 
             style={{
-                marginLeft: "-5px",
-                marginTop: "520px",
+                marginLeft: "0px",
+                marginTop: "150px",
                 float: "left",
                 height: "1080px",
                 width: "50%",
@@ -51,8 +51,8 @@ const VideoComponent = () => {
                 <ReactPlayer
                     // url='/videos/1.mp4'
                     url= {["https://youtu.be/BZmdxw3owWw", "https://youtu.be/8sM0L5zFQ-Q"]}
-                    width='900px'         // 플레이어 크기 (가로)
-                    height='600px'        // 플레이어 크기 (세로)
+                    width='1000px'         // 플레이어 크기 (가로)
+                    height='1000px'        // 플레이어 크기 (세로)
                     muted={false}
                     controls={true}       // 플레이어 컨트롤 노출 여부
                     // onReady={() => {playing()}}
