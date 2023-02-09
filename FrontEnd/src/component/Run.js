@@ -4,19 +4,21 @@ import { useEffect } from "react";
 import { useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./Next.css";
-
+import UseInterval from "./UseInterval"
 
 function Section({ children }) {
   const navigate = useNavigate()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true,     margin: "0px 100px -50px 0px" });
 
-  useEffect(() => {
-    console.log('changepage페이지 변경')
-    setTimeout(() => {
+
+
+    // console.log('Runpage변경')
+    UseInterval(() => {
       navigate("/hello")
     }, 2000)
-  })
+  
+
 
   return (
     <section ref={ref}>

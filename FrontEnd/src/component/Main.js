@@ -3,25 +3,24 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import UseInterval from "./UseInterval"
 import "./Main.css";
 
 
 function Section({ children }) {
+
   const navigate = useNavigate()
+  UseInterval(() => {
+    navigate("/next")
+  }, 3000)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true,     margin: "0px 100px -50px 0px" });
   // const goToNext = () => {
   //   navigate("/next")
   // }
-  // const changePage = setTimeout(() => {
-  //   navigate("/next")
-  // }, 5000)
-  useEffect(() => {
-    console.log('changepage페이지 변경')
-    setTimeout(() => {
-      navigate("/next")
-    }, 5000)
-  })
+
+  
+
   return (
     <section ref={ref}>
       
