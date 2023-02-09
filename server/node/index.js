@@ -2,10 +2,6 @@ const express = require("express")
 const { WebSocketServer } = require("ws")
 
 
-// routes
-const mainRouter = require('./routes/main');
-
-
 // server
 const app = express();
 
@@ -13,11 +9,8 @@ const app = express();
 // port
 const port = '8000';
 app.listen(port, () => {
-  console.log(`Example app listening on port ${ port }`)
+  console.log(`Example app listening on port ${port}`)
 })
-
-// routes
-app.use('/main', mainRouter);
 
 
 // websocket
@@ -25,7 +18,7 @@ const camWWS = new WebSocketServer({ port: 8002 });
 camWWS.on("connection", (ws, request) => {
   ws.on("close", () => {
   });
-  
+
   ws.on("message", data => {
     camWWS.clients.forEach(client => {
       client.send(data.toString())
@@ -35,13 +28,11 @@ camWWS.on("connection", (ws, request) => {
 
 const commandWWS = new WebSocketServer({ port: 8003, path: '/command' })
 commandWWS.on("connection", (ws, request) => {
-  
   ws.on("close", () => {
   });
 
   ws.on("message", data => {
     commandWWS.clients.forEach(client => {
-      client.send(data.toString())
       client.send("OK")
     })
   });
