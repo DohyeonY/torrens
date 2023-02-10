@@ -13,7 +13,9 @@ import Websoket from "./WebSoket"
 import UseInterval from '../UseInterval';
 import { useNavigate } from "react-router-dom";
 
+
 export default function EduScreen () {
+    const [bgimg, setBgimg] = useState("./img/wait/CatchBF.gif")
     const navigate = useNavigate()
     UseInterval(() => {
         navigate("/stamp")
@@ -22,9 +24,17 @@ export default function EduScreen () {
       
     return (
         <>        
-        <Video/>
-        <Websoket/>  
+          <div style={{position: "absolute", zIndex: "-3"}}>
+            <img 
+              style={{
+                position: "absolute",
+                height:"1200px",
+                width: "3300px",
+              }}
+              src="img/edu/bubble.gif" />
+            </div>
+          <Video/>
+          <Websoket/>  
         </>
-
         )
     }
