@@ -10,9 +10,16 @@ import "./WebSoket.css"
 // import { Player } from 'video-react';
 import Video from "./VideoComponent"
 import Websoket from "./WebSoket"
+import UseInterval from '../UseInterval';
+import { useNavigate } from "react-router-dom";
 
 export default function EduScreen () {
+    const navigate = useNavigate()
+    UseInterval(() => {
+        navigate("/stamp")
+      }, 120000)
 
+      
     return (
         <>        
         <Video/>

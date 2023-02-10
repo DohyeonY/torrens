@@ -3,14 +3,17 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import "./CatchBF.css"
 import UseInterval from "../UseInterval"
+import useInterval from '../UseInterval';
 
 export default function CatchBF() {
+    let ws = new WebSocket("ws://i8c203.p.ssafy.io:8002")
     const navigate = useNavigate()
     const [timer, setTimer] = useState("00:00:00")
     const [hour, setHour] = useState("")
-    // const [exist, setExist] = useState("")
+    const [exist, setExist] = useState("")
     const [img, setImg] = useState("")
     const [bgimg, setBgimg] = useState("")
+
 
     UseInterval (() => {
         console.log("잇런치 유스인터벌")
@@ -74,6 +77,7 @@ export default function CatchBF() {
             setHour(`${hours}`)
         }
         currentTimer()
+
          if (hour === "12") {
             setImg("img/wait/EatLunch.gif")
             setBgimg("")
@@ -84,18 +88,33 @@ export default function CatchBF() {
             setBgimg("url(img/wait/CatchBF.gif)")
             setImg("")
         }
+
+
+        ws.onmessage = (event) => {
+        console.log("런치에서 넘어옴")
+        setExist(event.data)
+        console.log(exist)
+        ws.close()
+        if (exist) {
+            navigate("/main")
+        }
+        }  
+            // if ()
+            // navigate("/main")
+            // if (exist !== "") {
+            //     ws.close()
+            // }
+        
+
     }, 1000)
 
-    let ws = new WebSocket("ws://i8c203.p.ssafy.io:8002")
-    ws.onmessage = (event) => {
-        console.log("런치에서 넘어옴")
-        // setExist(event.data.Top)
-        // if (hour === "17") {
-        //     if (exist !== "" ) {
-        //         setExist("")
-                navigate("/main")
+    // navigate("/main")
+        // if (hour === "09") {
+        //     // if (exist !== "" ) {
+        //     //     setExist("")
+        //         navigate("/main")
+        //     }
 
-    }
 
     // const readyChange = () => {
     //     let ws = new WebSocket("ws://i8c203.p.ssafy.io:8002")
@@ -134,4 +153,4 @@ export default function CatchBF() {
             </div>
         </>
     )
-            }
+}

@@ -11,6 +11,7 @@ import EduScreen from './component/EduScreen/EduScreen'
 // import Sleep from './component/WaitScreen/Sleep'
 import EatLunch from './component/WaitScreen/EatLunch'
 import Notice from './component/EduScreen/Notice'
+import Stamp from './component/EduScreen/Stamp'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="/hellogif" element={<HelloGif/>}/>
           <Route path="/notice" element={<Notice/>}/>
           <Route path="/eduscreen" element={<EduScreen/>}/>
+          <Route path="/stamp" element={<Stamp/>}/>
         </Routes>
       </BrowserRouter>
     </div>

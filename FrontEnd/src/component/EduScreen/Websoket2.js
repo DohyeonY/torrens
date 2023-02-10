@@ -16,15 +16,15 @@ import { Navigate } from 'react-router-dom';
 
 
 
-function WebSoket() {
+function WebSoket2() {
     // const [msg, setMsg] = useState("")
     const [top, setTop] = useState("")
     const [upperLib0, setUpperLib0] = useState("")
     const [upperLib1, setUpperLib1] = useState("")
     const [leftEye, setleftEye] = useState("")
-    const [img1, setImg1] = useState("img/edu/virus1.png")
-    const [img2, setImg2] = useState("img/edu/virus2.png")
-    const [img3, setImg3] = useState("img/edu/virus3.png")
+    const [img1, setImg1] = useState("img/edu/bling1.gif")
+    const [img2, setImg2] = useState("img/edu/bling2.gif")
+    const [img3, setImg3] = useState("img/edu/bling3.gif")
     let ws = new WebSocket("ws://i8c203.p.ssafy.io:8002")
     ws.onmessage = (event) => {
         // setMsg(event.data)
@@ -64,13 +64,13 @@ function WebSoket() {
         // console.log(TopNum[1])
 
       }
-      UseInterval(() => {
-        setImg1('img/edu/bling2.gif')
-    }, 90000)
-      UseInterval(() => {
-        setImg2('img/edu/bling3.gif')
-        setImg3('img/edu/bling1.gif')
-    }, 80000)
+    //   UseInterval(() => {
+    //     setImg1('img/edu/bling2.gif')
+    // }, 90000)
+    //   UseInterval(() => {
+    //     setImg2('img/edu/bling3.gif')
+    //     setImg3('img/edu/bling1.gif')
+    // }, 80000)
     return (
       <div>
         <div
@@ -111,4 +111,4 @@ function WebSoket() {
 
   }
 
-export default WebSoket;
+export default WebSoket2;
