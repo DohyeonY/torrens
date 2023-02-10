@@ -10,13 +10,11 @@
 - 김상래 (팀장) : 임베디드 개발, 프로젝트 관리
 - 이영도 (팀원) : 임베디드 개발,
 - 이준호 (팀원) : 임베디드 개발,
-- 이영도 (팀원) : 임베디드 개발
-- 이준호 (팀원) : 임베디드 개발
 - 여도현 (팀원) : Front-End 개발,
 - 최선호 (팀원) : Back-End 개발, 
 
 ## 기술 스택
-- IoT : OpenCV, RaspberryPI
+- IoT : OpenCV, Jetson nano, Arduino 
 - Frontend : React, Redux
 - Backend : Spring, MySQL
 - Infra : Jenkins, Amazon S3, Nginx
