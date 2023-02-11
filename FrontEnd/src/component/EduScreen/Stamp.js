@@ -22,6 +22,7 @@ function Stamp() {
     }
       readyChange()
       UseInterval(() => {
+        console.log("스탬프 화면")
         navigate("/")
       }, 5000)
     return (
@@ -43,7 +44,7 @@ function Stamp() {
               }} 
               src="img/edu/stamp1.gif" alt="dd"/>
           </div>
-          <div style={{position: "absolute", zIndex: "-3"}}>
+          {/* <div style={{position: "absolute", zIndex: "-3"}}>
             <img 
               style={{
                 position: "absolute",
@@ -51,7 +52,7 @@ function Stamp() {
                 width: "3300px",
               }}
               src="img/edu/bubble.gif" />
-            </div>
+            </div> */}
           <WebSoket2 style={{zIndex: "-1"}}/>
         </>
 

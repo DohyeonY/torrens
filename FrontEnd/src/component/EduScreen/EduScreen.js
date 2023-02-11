@@ -24,7 +24,7 @@ export default function EduScreen () {
       
     return (
         <>        
-          <div style={{position: "absolute", zIndex: "-3"}}>
+          {/* <div style={{position: "absolute", zIndex: "-3"}}>
             <img 
               style={{
                 position: "absolute",
@@ -32,7 +32,7 @@ export default function EduScreen () {
                 width: "3300px",
               }}
               src="img/edu/bubble.gif" />
-            </div>
+            </div> */}
           <Video/>
           <Websoket/>  
         </>

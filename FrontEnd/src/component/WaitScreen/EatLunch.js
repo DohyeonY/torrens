@@ -81,7 +81,7 @@ export default function CatchBF() {
          if (hour === "12") {
             setImg("img/wait/EatLunch.gif")
             setBgimg("")
-        }  else if (hour === "14") {
+        }  else if (hour === "11") {
             setImg("img/wait/Sleep1.gif")
             setBgimg("")
         }   else {
