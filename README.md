@@ -15,7 +15,7 @@
 
 ## 기술 스택
 - IoT : OpenCV, Jetson nano, Arduino 
-- Frontend : React, Redux
+- Frontend : React
 - Backend : Spring, MySQL
 - Infra : Jenkins, Amazon S3, Nginx
 
@@ -104,9 +104,6 @@
 
   - var대신 const, let 사용하기
   - 가능한 Arrow Function으로 함수식 작성
-  - 변수명 : file_scope 상수는 UPPER_SNAKE_CASE, 그 외엔 camelCase. Boolean변수는 앞에 is 붙이기.
-  - 클래스(생성자)명 : 파스칼 케이스를 이용한다. PascalCase
-  - 클래스(HTML)명 : 케밥 케이스를 이용한다. kebal-case
 
   BE
 
@@ -115,7 +112,6 @@
   - 클래스명, 생성자명: PascalCase
   - 함수명: camelCase(동사 + 명사로 구성)
   - Mysql table, column name: snake_case
-  - photogroup 은 한단어로 표기하기
 
 <br>
 
@@ -131,12 +127,8 @@
 - ERD
 
 
-
-- API
-
-
 - 아키텍처
-
+![img](./asset/아키텍쳐.png)
 
 
 <br>
