@@ -8,16 +8,16 @@
 
 ## 팀원 소개 및 담당 역할
 - 김상래 (팀장) : 임베디드 개발, 프로젝트 관리
-- 이영도 (팀원) : 임베디드 개발,
-- 이준호 (팀원) : 임베디드 개발,
-- 여도현 (팀원) : Front-End 개발,
-- 최선호 (팀원) : Back-End 개발, 
+- 이영도 (팀원) : 임베디드 개발
+- 이준호 (팀원) : 임베디드 개발
+- 여도현 (팀원) : Front-End 개발
+- 최선호 (팀원) : Back-End 개발
 
 ## 기술 스택
 - IoT : OpenCV, Jetson nano, Arduino 
 - Frontend : React
-- Backend : Spring, MySQL
-- Infra : Jenkins, Amazon S3, Nginx
+- Backend : Node.js, MySQL
+- Infra : Amazon S3, Nginx
 
 <br>
 
@@ -117,16 +117,6 @@
 
 ### 1. Planning & Design
 
-- 아이디어 기능 정리
-
-
-
-- 와이어 프레임
-
-
-- ERD
-
-
 - 아키텍처
 ![img](./asset/아키텍쳐.png)
 
@@ -176,8 +166,6 @@
     │  
     └─UseInterval.js
 ```
-
-- Jenkins: gitlab dev branch에 merge(or push)시 자동 재빌드
 
 - Jira: 주단위로 월요일날 회의를 통해 이슈를 만들고 그 주 금요일 혹은 일요일까지 대부분 완료
 
