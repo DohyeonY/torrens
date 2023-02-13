@@ -15,7 +15,7 @@
 
 ## 기술 스택
 - IoT : OpenCV, Jetson nano, Arduino 
-- Frontend : React
+- Frontend : React 8.11.0
 - Backend : Node.js, MySQL
 - Infra : Amazon S3, Nginx
 
