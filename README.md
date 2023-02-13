@@ -143,8 +143,6 @@
 
 ### 2. Development & Test
 
-- FE Directory: pages에서 component 들을 활용하여 페이지 구성, store에서 redux 관리, api에서 request functions 관리
-
 ```
 ├─public
 │      favicon.ico
@@ -161,106 +159,30 @@
     │  reportWebVitals.js
     │  setupTests.js
     │
-    ├─api
-    │      api.js
-    │      community.js
-    │      mypage.js
-    │      s3.js
-    │      user.js
-    │
-    ├─assets
-    │  │  defaultProfile.png
-    │  │  img404.png
-    │  │  logo.png
-    │  │
-    │  └─UI
-    │          add.png
-    │          back.png
-    │          ...
-    │
     ├─components
-    │  ├─Community
-    │  │      Comments.css
-    │  │      Comments.js
-    │  │      CommentsEdit.js
-    │  │      CommentsList.js
-    │  │      CommentsNew.js
-    │  │      CommunityCarousel.css
-    │  │      CommunityCarousel.js
-    │  │      CommunityListFrame.css
-    │  │      CommunityListFrame.js
-    │  │      CommunityListPhoto.css
-    │  │      CommunityListPhoto.js
-    │  │      SharePost.css
-    │  │      SharePost.js
+    │  ├─BridgeScreen
+    │  │      Hello.css
+    │  │      Hello.js
+    │  │      HelloGif.css
+    │  │      HelloGif.js
+    │  │      Main.css
+    │  │      Main.js
+    │  │      Next.css
+    │  │      Next.js
+    │  │      Run.css
+    │  │      Run.js
     │  │
-    │  ├─Layout
-    │  │      Footer.css
-    │  │      Footer.js
-    │  │      Header.css
-    │  │      Header.js
-    │  │      Layout.css
-    │  │      Layout.js
+    │  ├─EduScreen
+    │  │      EduScreen.js
+    │  │      Notice.js
+    │  │      Stamp.css
+    │  │      VideoComponent.js
     │  │
-    │  ├─MyPage
-    │  │      ActivityTabs.css
-    │  │      ActivityTabs.js
-    │  │      FollowerList.js
-    │  │      FollowingList.js
-    │  │      MyGallery.js
-    │  │      MypageProfile.css
-    │  │      MypageProfile.js
-    │  │      Search.js
-    │  │
-    │  ├─ScrollCalendar
-    │  │      Calendar.css
-    │  │      Calender.js
-    │  │      ScrollCalendar.css
-    │  │      ScrollCalendar.js
-    │  │
-    │  ├─User
-    │  │      Profile.css
-    │  │      Profile.js
-    │  │
-    │  └─Utils
-    │          FloatingBtn.js
-    │          ImageEdit.js
-    │          ModalBasic.js
-    │          ModalConfirm.js
-    │          MsgEdit.js
-    │          Pagination.js
-    │
-    ├─pages
-    │      Ar.js
-    │      Community.css
-    │      Community.js
-    │      Download.css
-    │      Download.js
-    │      FrameEdit.css
-    │      FrameEdit.js
-    │      Kakao.css
-    │      Kakao.js
-    │      Login.css
-    │      Login.js
-    │      Main.css
-    │      Main.js
-    │      MyPage.css
-    │      Mypage.js
-    │      NotFound404.css
-    │      NotFound404.js
-    │      ProfileDelete.js
-    │      ProfileEdit.css
-    │      ProfileEdit.js
-    │      ProfileEditPw.js
-    │      Signup.js
-    │
-    └─store
-        │  store.js
-        │
-        └─modules
-                community.js
-                mypage.js
-                user.js
+    │  ├─WaitScreen
+    │  │      CatchBf.css
+    │  └─     EatLunch.js
+    │  
+    └─UseInterval.js
 ```
 
 - Jenkins: gitlab dev branch에 merge(or push)시 자동 재빌드
