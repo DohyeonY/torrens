@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Next from './component/Next'
-import Main from './component/Main'
-import Run from './component/Run'
-import Hello from './component/Hello'
-import HelloGif from './component/HelloGif'
+import Next from './component/BridgeScreen/Next'
+import Main from './component/BridgeScreen/Main'
+import Run from './component/BridgeScreen/Run'
+import Hello from './component/BridgeScreen/Hello'
+import HelloGif from './component/BridgeScreen/HelloGif'
 import EduScreen from './component/EduScreen/EduScreen'
 // import CatchBf from './component/WaitScreen/CatchBF'
 // import Sleep from './component/WaitScreen/Sleep'
