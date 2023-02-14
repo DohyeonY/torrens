@@ -73,7 +73,7 @@ function Section({ children }) {
       >
         <img id="image" src="img/선생님.png" alt="test"/>
       </span>
-      <div style={{marginLeft: "2000px"}}>
+      <div style={{marginLeft: "4000px"}}>
       <Audio style={{ float:"right", position: "absolute", zIndex:"-3" }}></Audio>
       </div>
     </section>

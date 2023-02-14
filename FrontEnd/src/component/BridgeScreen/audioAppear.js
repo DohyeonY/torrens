@@ -1,17 +1,10 @@
-import { createRef, useEffect, useRef } from 'react';
-import AudioPlayer from 'react-h5-audio-player';
-import { useState } from "react"
-
-// import 'react-h5-audio-player/lib/styles.less' Use LESS
-// import 'react-h5-audio-player/src/styles.scss' Use SASS
+import AudioPlayer from 'react-h5-audio-player'
 
 export default function Player() {
-  const [visible, setVisible] = useState(false)
 
   return (
       <AudioPlayer
         src="sounds/빼꼼소리_1.mp3"
-
         autoPlay={true}
         volume={0.5}
         hidePlayer={true}
@@ -20,8 +13,6 @@ export default function Player() {
         showFilledProgress={false}
         showFilledVolume={false}
         showSkipControls={false}
-
       />
-
   );
 }

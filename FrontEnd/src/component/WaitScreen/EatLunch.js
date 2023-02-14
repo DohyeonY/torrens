@@ -1,9 +1,9 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import "./CatchBF.css"
 import UseInterval from "../UseInterval"
-import useInterval from '../UseInterval';
+
 
 export default function CatchBF() {
     let ws = new WebSocket("ws://i8c203.p.ssafy.io:8002")
@@ -81,7 +81,7 @@ export default function CatchBF() {
          if (hour === "12") {
             setImg("img/wait/EatLunch.gif")
             setBgimg("")
-        }  else if (hour === "11") {
+        }  else if (hour === "14") {
             setImg("img/wait/Sleep1.gif")
             setBgimg("")
         }   else {
@@ -99,39 +99,8 @@ export default function CatchBF() {
             navigate("/main")
         }
         }  
-            // if ()
-            // navigate("/main")
-            // if (exist !== "") {
-            //     ws.close()
-            // }
-        
-
     }, 1000)
 
-    // navigate("/main")
-        // if (hour === "09") {
-        //     // if (exist !== "" ) {
-        //     //     setExist("")
-        //         navigate("/main")
-        //     }
-
-
-    // const readyChange = () => {
-    //     let ws = new WebSocket("ws://i8c203.p.ssafy.io:8002")
-    //     ws.onmessage = (event) => {
-    //         setExist(event.data.Top)
-    //         if (hour === "16") {
-    //             if (exist !== "" ) {
-    //                 setExist("")
-    //                 navigate("/main")
-    //             }
-    //         }
-    //     }
-    // }
-    // readyChange()
-
-
-    // currentTimer()
     return (
         <>
             <div style={{

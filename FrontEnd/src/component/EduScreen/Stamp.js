@@ -1,11 +1,8 @@
 import React from 'react';
-
-import { useState } from "react";
 import "./WebSoket.css"
 import UseInterval from "../UseInterval"
 import { useNavigate } from "react-router-dom";
 import WebSoket2 from './Websoket2';
-import useInterval from '../UseInterval';
 
 
 function Stamp() {
@@ -13,7 +10,6 @@ function Stamp() {
     const readyChange = () => {
         let ws = new WebSocket("ws://i8c203.p.ssafy.io:8003/command")
         ws.onmessage = (event) => {
-          // setpressButton(event.data)
           if ( event.data === "OK" ) {
             navigate("/")
           }
@@ -24,7 +20,7 @@ function Stamp() {
       UseInterval(() => {
         console.log("스탬프 화면")
         navigate("/")
-      }, 5000)
+      }, 8000)
     return (
         <>        
           <div
@@ -38,25 +34,13 @@ function Stamp() {
           }}
           >
               <img style={{
-                  // floate: "left",
                   height: "80%",
                   width: "150%",
               }} 
               src="img/edu/stamp1.gif" alt="dd"/>
           </div>
-          {/* <div style={{position: "absolute", zIndex: "-3"}}>
-            <img 
-              style={{
-                position: "absolute",
-                height:"1200px",
-                width: "3300px",
-              }}
-              src="img/edu/bubble.gif" />
-            </div> */}
           <WebSoket2 style={{zIndex: "-1"}}/>
         </>
-
         )
     }
-
 export default Stamp;
