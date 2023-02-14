@@ -1,23 +1,15 @@
 import React from 'react';
-// import { useRef } from "react";
 import { useState } from "react";
-// import { useInterval } from "react";
-import { useEffect } from "react";
-// import { useCallback } from "react"
-// import { useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import UseInterval from "../UseInterval"
-// import "../Hello.css";
-// const idleTimeout = 1000
+
 function Notice () {
-    console.log("노티스 함수 실행")
     const [checkTimer, setcheckTimer] = useState(0)
     const [pressButton, setpressButton] = useState("")
     const navigate = useNavigate()
     UseInterval(() => {
         console.log("123")
         if ( checkTimer === 3) {
-            // navigate("/eatlunch")
         } else if ( checkTimer < 4 ) {
             setcheckTimer(checkTimer +1)
         }
@@ -26,12 +18,9 @@ function Notice () {
     const readyChange = () => {
         let ws = new WebSocket("ws://i8c203.p.ssafy.io:8003/command")
         ws.onmessage = (event) => {
-          // setpressButton(event.data)
           if ( event.data === "OK" ) {
             navigate("/eduscreen")
           }
-          console.log(pressButton)
-          console.log(event.data)
         }
     }
       readyChange()
@@ -48,7 +37,7 @@ function Notice () {
             <h1 style={{
                 fontSize: "50px",
                 color: "white"
-            }}>버튼을 한 번더 눌러주세요!</h1>
+            }}>버튼을 한번 더 눌러주세요!</h1>
         </>
  )   
 }
