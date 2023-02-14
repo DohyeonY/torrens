@@ -3,7 +3,8 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import UseInterval from "./UseInterval"
+import UseInterval from "../UseInterval"
+import Audio from "./audioAppear"
 import "./Main.css";
 
 
@@ -67,6 +68,11 @@ function Section({ children }) {
       >
         <img id="image" src="img/선생님.png" alt="test"/>
       </span>
+
+      {/* <img style={{ position: "absolute", }} src="img/123.png"/> */}
+      <div style={{marginLeft: "2000px"}}>
+      <Audio style={{ float:"right", position: "absolute", zIndex:"-3" }}></Audio>
+      </div>
     </section>
   );
 }

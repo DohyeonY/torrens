@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import UseInterval from "./UseInterval"
+import UseInterval from "../UseInterval"
 import "./Hello.css";
 
 

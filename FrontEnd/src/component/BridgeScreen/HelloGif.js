@@ -7,7 +7,8 @@ import { useEffect } from "react";
 import { useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./Hello.css";
-import useInterval from './UseInterval';
+import useInterval from '../UseInterval';
+import Audio from "./audioTts"
 // const idleTimeout = 1000
 function Section({ children }) {
     const [checkTimer, setcheckTimer] = useState(0)
@@ -97,6 +98,9 @@ function Section({ children }) {
       >
         <img id="image" src="img/토렌즈마크.png" alt="test"/>
       </span>
+      <div style={{marginLeft: "2000px"}}>
+      <Audio style={{ float:"right", position: "absolute", zIndex:"-3" }}></Audio>
+      </div>
       {/* <div style={{position: "absolute", float: "left",}}>
         <img style={{
           width: "300px",

@@ -4,7 +4,8 @@ import { useEffect } from "react";
 import { useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./Next.css";
-import UseInterval from "./UseInterval"
+import UseInterval from "../UseInterval"
+import Audio from "./audioRun"
 
 function Section({ children }) {
   const navigate = useNavigate()
@@ -66,6 +67,9 @@ function Section({ children }) {
       >
         <img id="image" src="img/runfox.png" alt="test"/>
       </span>
+      <div style={{marginLeft: "2000px"}}>
+      <Audio style={{ float:"right", position: "absolute", zIndex:"-3" }}></Audio>
+      </div>
     </section>
   );
 }
