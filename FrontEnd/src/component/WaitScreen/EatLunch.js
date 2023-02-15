@@ -13,6 +13,7 @@ export default function CatchBF() {
     const [exist, setExist] = useState("")
     const [img, setImg] = useState("")
     const [bgimg, setBgimg] = useState("")
+    // const [minutes, setMinutes] = useState("")
 
 
     UseInterval (() => {
@@ -21,6 +22,7 @@ export default function CatchBF() {
             const date = new Date()
             const hours = String(date.getHours()).padStart(2, "0")
             const minutes = String(date.getMinutes()).padStart(2, "0")
+            // setMinutes(minutes)
             const seconds = String(date.getSeconds()).padStart(2, "0")
             if (hours === "13") {
                 setTimer(`1시 ${minutes}분 ${seconds}초`)
@@ -101,8 +103,12 @@ export default function CatchBF() {
         }  
     }, 1000)
 
+    const moveMain = () => {
+        navigate("/main")
+    }
+
     return (
-        <>
+        <div onClick={moveMain}>
             <div style={{
                 width: "1920px",
                 height: "1080px",
@@ -120,6 +126,6 @@ export default function CatchBF() {
                 }}
                     src={img} alt="" />
             </div>
-        </>
+        </div>
     )
 }

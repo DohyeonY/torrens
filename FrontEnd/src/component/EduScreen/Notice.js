@@ -24,8 +24,12 @@ function Notice () {
         }
     }
       readyChange()
+
+    const moveEduscreen = () => {
+        navigate("/stamp")
+    }
  return (
-        <>
+        <div onClick={moveEduscreen}>
             <img style={{
                 margin: "auto",
                 marginTop: "200px",
@@ -38,7 +42,7 @@ function Notice () {
                 fontSize: "50px",
                 color: "white"
             }}>버튼을 한번 더 눌러주세요!</h1>
-        </>
+        </div>
  )   
 }
 export default function notice() {

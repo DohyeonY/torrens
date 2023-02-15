@@ -40,9 +40,11 @@ function Section({ children }) {
     // goHomeTimer()
     const ref = useRef(null)
     const isInView = useInView(ref, { once: true,     margin: "0px 100px -50px 0px" });
-    
+    const moveNotice = () => {
+      navigate("/notice")
+  }
           return (
-            <section ref={ref}>
+            <section ref={ref} onClick={moveNotice}>
       
       <span
         style={{
