@@ -20,7 +20,7 @@ function Stamp() {
       UseInterval(() => {
         console.log("스탬프 화면")
         navigate("/")
-      }, 8000)
+      }, 6000)
     return (
         <>        
           <div

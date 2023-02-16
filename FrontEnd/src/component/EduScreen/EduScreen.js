@@ -10,7 +10,7 @@ export default function EduScreen () {
     const navigate = useNavigate()
     UseInterval(() => {
         navigate("/stamp")
-      }, 123000)
+      }, 122000)
 
       
     return (

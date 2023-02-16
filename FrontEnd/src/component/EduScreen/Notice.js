@@ -26,7 +26,7 @@ function Notice () {
       readyChange()
 
     const moveEduscreen = () => {
-        navigate("/stamp")
+        navigate("/eduscreen")
     }
  return (
         <div onClick={moveEduscreen}>

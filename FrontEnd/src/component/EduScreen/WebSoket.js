@@ -35,7 +35,7 @@ function WebSoket() {
       }
       UseInterval(() => {
         setImg1('img/edu/bling2.gif')
-    }, 90000)
+    }, 80000)
       UseInterval(() => {
         setImg2('img/edu/bling3.gif')
         setImg3('img/edu/bling1.gif')
