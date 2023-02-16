@@ -27,21 +27,21 @@
 
 ![img](./assets/wait.gif)
 
-### 2. 손의 모션을 캡쳐해서 양치, 세안, 손씻기 버튼 클릭
+### 2. 특정 시간에 얼굴 모션을 캡쳐해서 사람이 앞에 있으면 다음 화면으로 전환
 
-사진 추가
+![img](./assets/MainToGif.gif)
 
-### 3. 각 교육 진행
+### 3. 안내사항
 
-사진 추가
+![img](./assets/notice.gif)
 
-### 4. AR기능
+### 4. 애니메이션 및 ar
 
-사진 추가
+![img](./assets/VirusToBling.gif)
 
-### 5. 교육 종료 후 LED 전구를 활용하여 효과 연출
+### 5. 애니메이션 종료 후 도장화면
 
-사진 추가
+![img](./assets/stamp.gif)
 
 
 
@@ -116,6 +116,9 @@
 <br>
 
 ### 1. Planning & Design
+
+- 기술
+![image.png](./assets/skill.png)
 
 - 아키텍처
 ![img](./asset/아키텍쳐.png)
