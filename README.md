@@ -121,7 +121,7 @@
 ![image.png](./assets/skill.png)
 
 - 아키텍처
-![img](./asset/아키텍쳐.png)
+![img](./assets/아키텍쳐.png)
 
 
 <br>
