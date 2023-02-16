@@ -130,10 +130,13 @@
 
 ```
 ├─public
-│      favicon.ico
-│      index.html
-│      manifest.json
-│      robots.txt
+│   │  favicon.ico
+│   │  index.html
+│   │  manifest.json
+│   │  robots.txt
+│   ├─img
+│   ├─sounds
+│   └─videos
 │
 └─src
     │  App.css
@@ -146,6 +149,10 @@
     │
     ├─components
     │  ├─BridgeScreen
+    │  │      audioAppears.js
+    │  │      audioDisappear.js
+    │  │      audioRun.js
+    │  │      audioTts.js
     │  │      Hello.css
     │  │      Hello.js
     │  │      HelloGif.css
@@ -162,6 +169,9 @@
     │  │      Notice.js
     │  │      Stamp.css
     │  │      VideoComponent.js
+    │  │      WebSoket.css
+    │  │      WebSoket.js
+    │  │      WebSoket2.js
     │  │
     │  ├─WaitScreen
     │  │      CatchBf.css
