@@ -32,9 +32,13 @@ commandWWS.on("connection", (ws, request) => {
   });
 
   ws.on("message", data => {
-    commandWWS.clients.forEach(client => {
-      client.send("OK")
-    })
+    
+    if (data.toString() === 'Btn-pressed') {
+      commandWWS.clients.forEach(client => {
+        client.send("OK")
+      })
+    };
+    
   });
 });
 
