@@ -194,4 +194,4 @@
 캐릭터 출처 : <a href="https://kr.freepik.com/free-vector/happy-funny-cartoon-animals-set_8609221.htm#query=%EB%8F%99%EB%AC%BC%20%EC%BA%90%EB%A6%AD%ED%84%B0&position=0&from_view=keyword">작가 pch.vector</a> 출처 Freepik
 
 음성 출처 : 인공지능 가상 연기자 서비스, 타입캐스트를 활용하여 제작되었습니다.
-출연진: 채린, 호빈 <a href="https://app.typecast.ai/ko/dashboard">
+출연진: 채린, 호빈 <a href="https://app.typecast.ai/ko/dashboard">.
